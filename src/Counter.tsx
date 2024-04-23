@@ -1,4 +1,5 @@
 import {
+  useRef,
   useState,
   type FunctionComponent,
   type PropsWithChildren,
@@ -10,13 +11,16 @@ type Props = PropsWithChildren<{
 
 export const Counter: FunctionComponent<Props> = ({ start = 0, children }) => {
   const [n, setN] = useState<number>(start);
+  const ref = useRef<HTMLButtonElement>(null);
 
   const incr = () => setN((n) => n + 1);
   return (
     <div>
       <h1>Counter</h1>
       <p>Number : {n}</p>
-      <button onClick={incr}>Incremente</button>
+      <button ref={ref} onClick={incr}>
+        Incremente
+      </button>
     </div>
   );
 };
