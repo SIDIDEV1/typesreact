@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from "react";
+import type { FunctionComponent, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
   start?: number;
 }>;
 
-function Counter({ start = 0, children }: Props) {
+export const Counter: FunctionComponent<Props> = ({ start = 0, children }) => {
   return (
     <div>
       <h1>Counter</h1>
@@ -12,6 +12,4 @@ function Counter({ start = 0, children }: Props) {
       <button>Incremente</button>
     </div>
   );
-}
-
-export default Counter;
+};
