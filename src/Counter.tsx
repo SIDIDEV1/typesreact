@@ -18,6 +18,7 @@ export const Counter: FunctionComponent<Props> = ({ start = 0, children }) => {
     <div>
       <h1>Counter</h1>
       <p>Number : {n}</p>
+      {children}
       <button ref={ref} onClick={incr}>
         Incremente
       </button>
